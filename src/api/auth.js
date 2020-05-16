@@ -1,5 +1,6 @@
 import { request } from '@/utils/request'
 
+
 export function login(data) {
   return request('weapp/authorizations', {
     method: 'post',
@@ -41,5 +42,12 @@ export function getVerificationCode(key, code) {
       captcha_key: key,
       captcha_code: code
     }
+  })
+}
+
+export function register(data) {
+  return request('weapp/users', {
+    method: 'post',
+    data: data
   })
 }
