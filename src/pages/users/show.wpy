@@ -17,6 +17,9 @@
   font-size: 13px;
   color: #888888;
 }
+.delete-button {
+  margin-top: 15px;
+}
 </style>
 <template>
   <div class="page">
