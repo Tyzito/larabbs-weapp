@@ -1,4 +1,5 @@
 const path = require('path');
+const DefinePlugin = require('@wepy/plugin-define');
 var prod = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -30,7 +31,11 @@ module.exports = {
       ]
     }
   },
-  plugins: [],
+  plugins: [
+    DefinePlugin({
+      API_URL: prod ? '"https://weapp.taizt.wiki/api/v1/"' : '"http://larabbs.test/api/v1/"',
+    })
+  ],
   appConfig: {
     noPromiseAPI: ['createSelectorQuery']
   }
